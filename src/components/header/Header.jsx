@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Example } from "../framerMotion/Example";
+import FindAStore from "../framerMotion/FindAStore";
 import "./Header.css";
 
 const Header = () => {
@@ -23,7 +25,11 @@ const Header = () => {
         </Link>
       </div>
 
-      <div className="header__right"></div>
+      <div className="header__right">
+        <Example />
+        <FindAStore />
+        {/* user here */}
+      </div>
     </div>
   );
 };

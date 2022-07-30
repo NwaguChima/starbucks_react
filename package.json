@@ -8,6 +8,7 @@
     "@testing-library/react": "^13.0.1",
     "@testing-library/user-event": "^14.1.1",
     "firebase-tools": "^11.4.0",
+    "framer-motion": "^6.5.1",
     "react": "^18.2.0",
     "react-awesome-reveal": "^3.8.1",
     "react-dom": "^18.2.0",
