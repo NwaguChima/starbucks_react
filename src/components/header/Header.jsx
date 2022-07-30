@@ -1,10 +1,17 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { selectUser } from "../../features/userSlice";
 import { Example } from "../framerMotion/Example";
 import FindAStore from "../framerMotion/FindAStore";
+import SignUpButton from "../signUpButton/SignUpButton";
+import SignInButton from "../signInButton/SignInButton";
+import LogoutButton from "../logoutButton/LogoutButton";
 import "./Header.css";
 
-const Header = () => {
+const Header = ({ menuPage }) => {
+  const user = useSelector(selectUser);
+
   return (
     <div className="header">
       <div className="header__left">
@@ -28,7 +35,20 @@ const Header = () => {
       <div className="header__right">
         <Example />
         <FindAStore />
-        {/* user here */}
+        {!user ? (
+          <>
+            <Link to="/account/signin">
+              <SignInButton />
+            </Link>
+            <Link to="/account/create">
+              <SignUpButton />
+            </Link>
+          </>
+        ) : (
+          <div className="header__logout">
+            {menuPage ? <LogoutButton /> : <Link to="/menu">Order Now</Link>}
+          </div>
+        )}
       </div>
     </div>
   );
