@@ -13,7 +13,7 @@ const Header = ({ menuPage }) => {
   const user = useSelector(selectUser);
 
   return (
-    <div className="header">
+    <div className={`header ${menuPage && "header__menuPage"}`}>
       <div className="header__left">
         <Link className="header__logo" to="/">
           <img

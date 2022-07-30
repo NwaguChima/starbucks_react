@@ -12,6 +12,13 @@
     0 0 2px rgba(0, 0, 0, 0.07);
 }
 
+.header__menuPage {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 95%;
+}
+
 .header__logo {
   margin-right: 20px;
 }
@@ -27,7 +34,8 @@
   gap: 20px;
 }
 
-.header__left > a {
+.header__left > a,
+.header__logout > a {
   color: black;
   text-decoration: none;
   font-weight: 800;
@@ -37,11 +45,39 @@
   font-size: 14px;
 }
 
-.header__left > a:hover {
+.header__left > a:hover,
+.header__logout > a:hover {
   color: #008248;
   transition: all 0.1s;
   -webkit-transition: all 0.1s;
   -moz-transition: all 0.1s;
   -ms-transition: all 0.1s;
   -o-transition: all 0.1s;
+}
+
+@media (max-width: 768px) {
+  .header__link {
+    display: none;
+  }
+}
+
+.header__right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .header__right > a,
+  .header__right > button {
+    display: none;
+  }
+
+  .header__menuPage {
+    position: inherit;
+  }
+
+  .header__logout {
+    display: none;
+  }
 }
