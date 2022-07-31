@@ -2,7 +2,7 @@ import React from "react";
 import "./FindAStore.css";
 
 const FindAStore = () => {
-  return <div>FindAStore</div>;
+  return <div></div>;
 };
 
 export default FindAStore;
