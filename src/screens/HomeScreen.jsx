@@ -1,6 +1,7 @@
 import React from "react";
 import { Fade } from "react-awesome-reveal";
 import { Link } from "react-router-dom";
+import Featured from "../components/featured/Featured";
 import Heading from "../components/heading/Heading";
 
 const HomeScreen = () => {
@@ -34,6 +35,34 @@ const HomeScreen = () => {
       <Fade>
         <Heading heading="TODAY IS YOURS" />
       </Fade>
+
+      <div className="homeScreen__featured">
+        <Fade>
+          <Featured
+            title="NICELY NONDAIRY"
+            info="Say yes to sips of delight with our Honey Almondmilk Flat White and new Honey Almondmilk Cold Brew."
+            link="Explore the honey drinks"
+            path=""
+            image="https://content-prod-live.cert.starbucks.com/binary/v2/asset/137-68069.png"
+            background="#f0ebe0"
+            color="#1e3932"
+            className="featured__hoverLight"
+          />
+        </Fade>
+
+        <Fade>
+          <Featured
+            title="NICELY NONDAIRY"
+            info="Say yes to sips of delight with our Honey Almondmilk Flat White and new Honey Almondmilk Cold Brew."
+            link="Explore the honey drinks"
+            path=""
+            image="https://content-prod-live.cert.starbucks.com/binary/v2/asset/137-68069.png"
+            background="#f0ebe0"
+            color="#1e3932"
+            className="featured__hoverLight"
+          />
+        </Fade>
+      </div>
     </div>
   );
 };
