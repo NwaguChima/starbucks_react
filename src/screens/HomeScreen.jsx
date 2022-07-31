@@ -3,6 +3,8 @@ import { Fade } from "react-awesome-reveal";
 import { Link } from "react-router-dom";
 import Featured from "../components/featured/Featured";
 import Heading from "../components/heading/Heading";
+import Info from "../components/info/Info";
+import "./HomeScreen.css";
 
 const HomeScreen = () => {
   return (
