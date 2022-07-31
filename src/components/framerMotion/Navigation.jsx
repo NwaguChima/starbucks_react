@@ -1,12 +1,12 @@
 import * as React from "react";
 import { motion } from "framer-motion";
-import { MenuLink } from "./MenuLink";
-import SignInButton from "./SignInButton";
-import SignUpButton from "./SignUpButton";
+import MenuLink from "./MenuLink";
 import FindAStore from "./FindAStore";
 import { useSelector } from "react-redux";
-import { selectUser } from "./features/userSlice";
-import LogoutButton from "./LogoutButton";
+import SignInButton from "../signInButton/SignInButton";
+import SignUpButton from "../signUpButton/SignUpButton";
+import LogoutButton from "../logoutButton/LogoutButton";
+import { selectUser } from "../../features/userSlice";
 
 const variants = {
   open: {
