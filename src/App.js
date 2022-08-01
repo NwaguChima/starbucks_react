@@ -4,7 +4,7 @@ import { Fade } from "react-awesome-reveal";
 import "./App.css";
 import HomeScreen from "./screens/HomeScreen";
 import Header from "./components/header/Header";
-import Footer from "./components/footer/Footer";
+import { Footer } from "./components/footer/Footer";
 
 function App() {
   return (
