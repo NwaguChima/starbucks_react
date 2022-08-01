@@ -30,7 +30,7 @@ const Accordion = ({
         initial={false}
         onClick={() => setExpanded(isOpen ? false : i)}
       >
-        <Link>{linkHeading}</Link>
+        <Link to="#">{linkHeading}</Link>
         <div className="accordion__icon">
           {isOpen ? (
             <KeyboardArrowUpRoundedIcon fontSize="large" />
@@ -134,5 +134,3 @@ export const Footer = () => {
     </>
   );
 };
-
-const accordionIds = [0, 1, 2, 3];
