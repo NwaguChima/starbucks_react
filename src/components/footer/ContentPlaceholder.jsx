@@ -1,6 +1,5 @@
 import * as React from "react";
 import { motion } from "framer-motion";
-import { mix } from "@popmotion/popcorn";
 import "./ContentPlaceholder.css";
 import { Link } from "react-router-dom";
 
