@@ -50,3 +50,40 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+.info__hoverLight:hover {
+  background-color: rgba(30, 57, 50, 0.1);
+}
+
+.info__hoverDark:hover {
+  background-color: hsla(0, 0%, 100%, 0.12);
+}
+
+@media (max-width: 1024px) {
+  .info {
+    width: 48%;
+    padding-left: 7px;
+  }
+}
+
+@media (max-width: 768px) {
+  .info {
+    width: 100%;
+  }
+}
+
+@media (max-width: 425px) {
+  .info__text {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  .info__text > h4 {
+    font-size: 20px;
+  }
+  .info__text > h6 {
+    font-size: 15px;
+  }
+  .info__text > a {
+    font-size: 13px;
+  }
+}
