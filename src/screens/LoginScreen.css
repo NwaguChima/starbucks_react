@@ -67,3 +67,58 @@
 .loginScreen__resetLinks {
   margin-top: 20px;
 }
+
+.loginScreen__resetLinks > a {
+  display: block;
+  margin-bottom: 15px;
+  text-decoration: underline;
+  color: #00653e;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.loginScreen__resetLinks > a:hover {
+  text-decoration: none;
+}
+
+.loginScreen__error {
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: smaller;
+}
+
+.loginScreen__error > .MuiSvgIcon-root {
+  color: #e75b52;
+}
+
+.loginScreen__reportIcon {
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translateY(100%);
+}
+
+.loginScreen__visibilityIcon {
+  cursor: pointer;
+  color: grey;
+  position: absolute;
+  right: 10%;
+  top: 0;
+  transform: translateY(80%);
+}
+
+.loginScreen__rewards {
+  text-align: center;
+  width: 100%;
+  padding: 20px 0;
+  background-color: #2d2926;
+  color: white;
+}
+
+.loginScreen__rewards > h4 {
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+}
