@@ -3,7 +3,11 @@ import { motion } from "framer-motion";
 import "./ContentPlaceholder.css";
 import { Link } from "react-router-dom";
 
-export const Word = ({ link }) => <Link className="word">{link}</Link>;
+export const Word = ({ link }) => (
+  <Link to="#" className="word">
+    {link}
+  </Link>
+);
 
 const Paragraph = ({ link1, link2, link3, link4, link5, link6 }) => (
   <div className="paragraph">

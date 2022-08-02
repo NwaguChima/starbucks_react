@@ -5,7 +5,7 @@ import LocationOnIcon from "@material-ui/icons/LocationOn";
 
 function FindAStore() {
   return (
-    <Link className="findAStore">
+    <Link to="#" className="findAStore">
       <LocationOnIcon />
       <h5>Find a store</h5>
     </Link>

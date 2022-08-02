@@ -30,7 +30,7 @@ const Accordion = ({
         initial={false}
         onClick={() => setExpanded(isOpen ? false : i)}
       >
-        <Link to="#">{linkHeading}</Link>
+        <Link to="">{linkHeading}</Link>
         <div className="accordion__icon">
           {isOpen ? (
             <KeyboardArrowUpRoundedIcon fontSize="large" />
