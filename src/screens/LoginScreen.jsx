@@ -7,6 +7,8 @@ import CloseIcon from "@material-ui/icons/Close";
 import ReportProblemRoundedIcon from "@material-ui/icons/ReportProblemRounded";
 import VisibilityOffOutlinedIcon from "@material-ui/icons/VisibilityOffOutlined";
 import VisibilityOutlinedIcon from "@material-ui/icons/VisibilityOutlined";
+import FooterSecondary from "../components/footerSecondary/FooterSecondary";
+import FormSubmit from "../components/formSubmit/FormSubmit";
 
 const LoginScreen = () => {
   const { register, handleSubmit, watch, errors } = useForm();
