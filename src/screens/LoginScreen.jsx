@@ -1,8 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./LoginScreen.css";
+import { useForm } from "react-hook-form";
 
 const LoginScreen = () => {
+  const { register, handleSubmit, watch, errors } = useForm();
+
+  const onsSubmit = ({ email, password }) => {};
+
   return (
     <div className="loginScreen">
       <div className="loginScreen__left">
@@ -16,7 +21,9 @@ const LoginScreen = () => {
           <h1>Sign in or create an account</h1>
         </div>
       </div>
-      <div className="loginScreen__right"></div>
+      <div className="loginScreen__right">
+        <form action="" onSubmit={handleSubmit(onSubmit)}></form>
+      </div>
     </div>
   );
 };

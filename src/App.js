@@ -1,12 +1,17 @@
 import React from "react";
-import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom";
 import { Fade } from "react-awesome-reveal";
 import "./App.css";
 import HomeScreen from "./screens/HomeScreen";
 import Header from "./components/header/Header";
 import { Footer } from "./components/footer/Footer";
+import LoginScreen from "./screens/LoginScreen";
+import { useSelector } from "react-redux";
+import { selectUser } from "./features/userSlice";
 
 function App() {
+  let user = useSelector(selectUser);
+
   return (
     <div className="app">
       <BrowserRouter>
@@ -22,6 +27,10 @@ function App() {
                 </Fade>
               </>
             }
+          />
+          <Route
+            path="/account/signin"
+            element={user ? <Navigate to="/" /> : <LoginScreen />}
           />
         </Routes>
       </BrowserRouter>
