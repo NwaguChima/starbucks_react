@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./LoginScreen.css";
 import { useForm } from "react-hook-form";
+import { TextField } from "@material-ui/core";
+import CloseIcon from "@material-ui/icons/Close";
+import ReportProblemRoundedIcon from "@material-ui/icons/ReportProblemRounded";
+import VisibilityOffOutlinedIcon from "@material-ui/icons/VisibilityOffOutlined";
+import VisibilityOutlinedIcon from "@material-ui/icons/VisibilityOutlined";
 
 const LoginScreen = () => {
   const { register, handleSubmit, watch, errors } = useForm();
+  const [passwordShown, setPasswordShown] = useState(false);
 
-  const onsSubmit = ({ email, password }) => {};
+  const onSubmit = ({ email, password }) => {};
 
   return (
     <div className="loginScreen">
@@ -22,7 +28,85 @@ const LoginScreen = () => {
         </div>
       </div>
       <div className="loginScreen__right">
-        <form action="" onSubmit={handleSubmit(onSubmit)}></form>
+        <form action="" onSubmit={handleSubmit(onSubmit)}>
+          <div className="loginScreen__inputContainer">
+            <TextField
+              name="email"
+              type="email"
+              label="Standard"
+              inputlabelprops={{ style: { color: "rgba(0, 0, 0, .56)" } }}
+              inputProps={{
+                style: { fontWeight: "800" },
+              }}
+              className="loginScreen__input"
+              inputRef={register("email", { required: true })}
+            />
+            {errors.email && (
+              <div className="loginScreen__error">
+                <CloseIcon fontSize="small" />
+                <span>Enter an email.</span>
+                <ReportProblemRoundedIcon
+                  fontSize="small"
+                  className="loginScreen__reportIcon"
+                />
+              </div>
+            )}
+          </div>
+          <div className="loginScreen__inputContainer">
+            <TextField
+              name="password"
+              type={passwordShown ? "text" : "password"}
+              label="Standard"
+              inputlabelprops={{ style: { color: "rgba(0, 0, 0, .56)" } }}
+              inputProps={{
+                style: { fontWeight: "800" },
+              }}
+              className="loginScreen__input"
+              inputRef={register("password", { required: true })}
+            />
+            {passwordShown ? (
+              <VisibilityOutlinedIcon
+                onClick={() => setPasswordShown(!passwordShown)}
+                className="loginScreen__visibilityIcon"
+              />
+            ) : (
+              <VisibilityOffOutlinedIcon
+                onClick={() => setPasswordShown(!passwordShown)}
+                className="loginScreen__visibilityIcon"
+              />
+            )}
+            {errors.password && (
+              <div className="loginScreen__error">
+                <CloseIcon fontSize="small" />
+                <span>Enter an password.</span>
+                <ReportProblemRoundedIcon
+                  fontSize="small"
+                  className="loginScreen__reportIcon"
+                />
+              </div>
+            )}
+          </div>
+          <div className="loginScreen__resetLinks">
+            <Link to="/">Forgot your username?</Link>
+            <Link to="/">Forgot your password?</Link>
+          </div>
+          <FormSubmit name="Sign in" type="submit" />
+        </form>
+
+        <div className="loginScreen__rewards">
+          <h4>JOIN STARBUCK@ REWARDS</h4>
+        </div>
+        <div className="loginScreen__joinNow">
+          <div className="loginScreen__joinNowContainer">
+            <Link to="/account/create">Join Now</Link>
+            <h3>Create an account and bring on the Rewards!</h3>
+            <p>
+              Join Starbucks@ Rewards to earn free food and drinks, get free
+              refills, pay and order with your phoem, and more.
+            </p>
+          </div>
+        </div>
+        <FooterSecondary paddingLeft={30} flexDirection="column" />
       </div>
     </div>
   );

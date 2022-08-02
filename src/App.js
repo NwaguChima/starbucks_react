@@ -10,7 +10,8 @@ import { useSelector } from "react-redux";
 import { selectUser } from "./features/userSlice";
 
 function App() {
-  let user = useSelector(selectUser);
+  // let user = useSelector(selectUser);
+  let user = null;
 
   return (
     <div className="app">
