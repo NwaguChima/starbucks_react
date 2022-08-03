@@ -35,7 +35,7 @@ const LoginScreen = () => {
             <TextField
               name="email"
               type="email"
-              label="Standard"
+              label="Email Address"
               inputlabelprops={{ style: { color: "rgba(0, 0, 0, .56)" } }}
               inputProps={{
                 style: { fontWeight: "800" },
@@ -58,7 +58,7 @@ const LoginScreen = () => {
             <TextField
               name="password"
               type={passwordShown ? "text" : "password"}
-              label="Standard"
+              label="Password"
               inputlabelprops={{ style: { color: "rgba(0, 0, 0, .56)" } }}
               inputProps={{
                 style: { fontWeight: "800" },
