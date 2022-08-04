@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { login, logout, selectUser } from "./features/userSlice";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import firebaseApp from "./firebase";
+import SignupScreen from "./screens/SignupScreen";
 
 function App() {
   const user = useSelector(selectUser);
@@ -52,7 +53,11 @@ function App() {
           />
           <Route
             path="/account/signin"
-            element={user ? <Navigate to="/" /> : <LoginScreen />}
+            element={user ? <Navigate to="/menu" /> : <LoginScreen />}
+          />
+          <Route
+            path="/account/create"
+            element={user ? <Navigate to="/menu" /> : <SignupScreen />}
           />
         </Routes>
       </BrowserRouter>
