@@ -1,0 +1,12 @@
+.signupScreen {
+  display: grid;
+  place-items: center;
+  gap: 40px;
+}
+
+.signupScreen__header > a > img {
+  object-fit: contain;
+  height: 50px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
