@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import FooterSecondary from "../components/footerSecondary/FooterSecondary";
+import SignupForm from "../components/signupForm/SignupForm";
 import "./SignupScreen.css";
 
 const SignupScreen = () => {
@@ -23,7 +24,7 @@ const SignupScreen = () => {
           .
         </p>
       </div>
-      {/* <SignupForm /> */}
+      <SignupForm />
       <FooterSecondary alignItems="center" flexDirection="column" />
     </div>
   );
