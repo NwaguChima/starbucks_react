@@ -36,6 +36,30 @@ const SignupForm = () => {
               </div>
             )}
           </div>
+
+          <div className="signupForm__inputContainer">
+            <TextField
+              name="lName"
+              label="Last name"
+              type="text"
+              InputLabelProps={{
+                style: { color: "rgba(0,0,0,.56)" },
+              }}
+              InputProps={{ style: { fontWeight: "800" } }}
+              className="signupForm__input"
+              inputRef={register({ required: true })}
+            />
+            {errors.lName && (
+              <div className="signupForm__error">
+                <CloseIcon fontSize="small" />
+                <span>Enter your last name.</span>
+                <ReportProblemRoundedIcon
+                  fontSize="small"
+                  className="signupForm__reportIcon"
+                />
+              </div>
+            )}
+          </div>
         </form>
       </div>
     </div>
