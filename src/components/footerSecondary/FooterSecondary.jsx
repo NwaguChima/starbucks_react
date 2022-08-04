@@ -18,11 +18,11 @@ const FooterSecondary = ({ alignItems, paddingLeft, flexDirection }) => {
             <FindAStore />
           </div>
           <div className="footerSecondary__right" style={{ flexDirection }}>
-            <Link>Responsibility</Link>
-            <Link>Web Accessibility</Link>
-            <Link>Privacy Policy</Link>
-            <Link>Terms of Use </Link>
-            <Link>Cookie Preferences</Link>
+            <Link to={"#"}>Responsibility</Link>
+            <Link to={"#"}>Web Accessibility</Link>
+            <Link to={"#"}>Privacy Policy</Link>
+            <Link to={"#"}>Terms of Use </Link>
+            <Link to={"#"}>Cookie Preferences</Link>
           </div>
         </div>
         <span className="footerSecondary__copyright">© 2021 Starbucks</span>
