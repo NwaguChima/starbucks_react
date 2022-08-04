@@ -84,7 +84,7 @@ export const Navigation = ({ toggle }) => {
       ) : (
         <motion.ul variants={variants}>
           <MenuLink
-            link="Menu"
+            link="/Menu"
             icon
             onClick={() => setShowMenuCategories(true)}
           />

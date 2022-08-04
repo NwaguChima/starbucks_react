@@ -7,7 +7,11 @@ import VisibilityOffOutlinedIcon from "@material-ui/icons/VisibilityOffOutlined"
 import VisibilityOutlinedIcon from "@material-ui/icons/VisibilityOutlined";
 import "./SignupForm.css";
 import FormSubmit from "../formSubmit/FormSubmit";
-import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  getAuth,
+  updateProfile,
+} from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { login } from "../../features/userSlice";
 import { useNavigate } from "react-router-dom";
@@ -16,29 +20,29 @@ const SignupForm = () => {
   const { register, handleSubmit, watch, errors } = useForm();
   const [passwordShown, setPasswordShown] = useState(false);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+  let navigate = useNavigate();
 
   const onSubmit = ({ fName, lName, email, password }) => {
-    const auth = getAuth();
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userAuth) => {
-        userAuth.user
-          .updateProfile({
-            displayName: fName,
-          })
-          .then(() => {
-            dispatch(
-              login({
-                email: userAuth.user.email,
-                uid: userAuth.user.uid,
-                displayName: userAuth.user.displayName,
-              })
-            );
+    // const auth = getAuth();
+    // createUserWithEmailAndPassword(auth, email, password)
+    //   .then((userAuth) => {
+    //     updateProfile(auth.currentUser, {
+    //       displayName: fName,
+    //     }).then(() => {
+    //       dispatch(
+    //         login({
+    //           email: userAuth.user.email,
+    //           uid: userAuth.user.uid,
+    //           displayName: userAuth.user.displayName,
+    //         })
+    //       );
 
-            navigate("/menu");
-          });
-      })
-      .catch((error) => alert(error.message));
+    //       navigate("/menu", { replace: true });
+    //     });
+    //   })
+    //   .catch((error) => alert(error.message));
+
+    navigate("/menu", { replace: true });
   };
 
   return (

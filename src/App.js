@@ -11,9 +11,11 @@ import { login, logout, selectUser } from "./features/userSlice";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import firebaseApp from "./firebase";
 import SignupScreen from "./screens/SignupScreen";
+import MenuScreen from "./screens/MenuScreen";
 
 function App() {
   const user = useSelector(selectUser);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -58,6 +60,19 @@ function App() {
           <Route
             path="/account/create"
             element={user ? <Navigate to="/menu" /> : <SignupScreen />}
+          />
+          <Route
+            path="/menu"
+            element={
+              !user ? (
+                <Navigate to="/account/signin" />
+              ) : (
+                <>
+                  <Header menuPage />
+                  <MenuScreen />
+                </>
+              )
+            }
           />
         </Routes>
       </BrowserRouter>
