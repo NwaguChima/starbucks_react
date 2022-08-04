@@ -9,12 +9,31 @@ import VisibilityOffOutlinedIcon from "@material-ui/icons/VisibilityOffOutlined"
 import VisibilityOutlinedIcon from "@material-ui/icons/VisibilityOutlined";
 import FooterSecondary from "../components/footerSecondary/FooterSecondary";
 import FormSubmit from "../components/formSubmit/FormSubmit";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { useDispatch } from "react-redux";
+import { login } from "../features/userSlice";
 
 const LoginScreen = () => {
   const { register, handleSubmit, watch, errors } = useForm();
   const [passwordShown, setPasswordShown] = useState(false);
+  const dispatch = useDispatch();
 
-  const onSubmit = ({ email, password }) => {};
+  const onSubmit = ({ email, password }) => {
+    console.log(email, password);
+    const auth = getAuth();
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userAuth) => {
+        console.log("userAuth", userAuth);
+        dispatch(
+          login({
+            email: userAuth.user.email,
+            uid: userAuth.user.uid,
+            displayName: userAuth.user.displayName,
+          })
+        );
+      })
+      .catch((error) => alert(error.message));
+  };
 
   return (
     <div className="loginScreen">

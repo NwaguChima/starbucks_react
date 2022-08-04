@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom";
 import { Fade } from "react-awesome-reveal";
 import "./App.css";
@@ -6,12 +6,33 @@ import HomeScreen from "./screens/HomeScreen";
 import Header from "./components/header/Header";
 import { Footer } from "./components/footer/Footer";
 import LoginScreen from "./screens/LoginScreen";
-import { useSelector } from "react-redux";
-import { selectUser } from "./features/userSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { login, logout, selectUser } from "./features/userSlice";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import firebaseApp from "./firebase";
 
 function App() {
-  // let user = useSelector(selectUser);
-  let user = null;
+  const user = useSelector(selectUser);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const auth = getAuth(firebaseApp);
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // User is signed in, see docs for a list of available properties
+        // https://firebase.google.com/docs/reference/js/firebase.User
+        dispatch(
+          login({
+            email: user.email,
+            uid: user.uid,
+            displayName: user.displayName,
+          })
+        );
+      } else {
+        dispatch(logout());
+      }
+    });
+  }, [dispatch]);
 
   return (
     <div className="app">
