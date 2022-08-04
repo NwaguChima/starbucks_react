@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import FooterSecondary from "../components/footerSecondary/FooterSecondary";
 import "./SignupScreen.css";
 
 const SignupScreen = () => {
@@ -14,6 +15,16 @@ const SignupScreen = () => {
         </Link>
       </div>
       <h1 className="signupScreen__heading">Create an account</h1>
+      <div className="signupScreen__rewards">
+        <h4>JOIN STARBUCK@ REWARDS</h4>
+        <p>
+          Join Starbucks@ Rewards to earn free food and drinks, get free
+          refills, pay and order with your phoem, and <Link to={"#"}>more</Link>
+          .
+        </p>
+      </div>
+      {/* <SignupForm /> */}
+      <FooterSecondary alignItems="center" flexDirection="column" />
     </div>
   );
 };
