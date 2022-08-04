@@ -6,6 +6,7 @@ import ReportProblemRoundedIcon from "@material-ui/icons/ReportProblemRounded";
 import VisibilityOffOutlinedIcon from "@material-ui/icons/VisibilityOffOutlined";
 import VisibilityOutlinedIcon from "@material-ui/icons/VisibilityOutlined";
 import "./SignupForm.css";
+import FormSubmit from "../formSubmit/FormSubmit";
 
 const SignupForm = () => {
   const { register, handleSubmit, watch, errors } = useForm();
@@ -123,6 +124,14 @@ const SignupForm = () => {
               </div>
             )}
           </div>
+          <h4 className="signupForm__rewards">
+            COLLECT MORE STARS & EARN REWARDS
+          </h4>
+          <span className="signupForm__span">
+            Email is a great way to know about offers and what’s new from
+            Starbucks.
+          </span>
+          <FormSubmit name="Create account" type="submit" />
         </form>
       </div>
     </div>
