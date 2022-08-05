@@ -76,7 +76,7 @@ function App() {
             }
           />
           <Route
-            path="/menu/feature"
+            path="/menu/featured"
             element={
               <>
                 <Header />

@@ -9,14 +9,14 @@ const MenuHeader = () => {
     <div className="menuHeader">
       <div className="menuHeader__links">
         <Link
-          to="#"
+          to="/menu"
           className={`${index === 0 && "menuHeader__link--active"}`}
           onClick={() => setIndex(0)}
         >
           All Products
         </Link>
         <Link
-          to="#"
+          to="/menu/featured"
           className={`${index === 1 && "menuHeader__link--active"}`}
           onClick={() => setIndex(1)}
         >
