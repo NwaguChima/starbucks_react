@@ -3,13 +3,16 @@ import "./MenuScreen.css";
 import menuList from "../menuList.json";
 import MenuItem from "../components/menuItem/MenuItem";
 import MenuHeader from "../components/menuHeader/MenuHeader";
+import MenuList from "../components/menuList/MenuList";
 
 const MenuScreen = () => {
   return (
     <div className="menuScreen">
       <MenuHeader />
       <div className="menuScreen__container">
-        <div className="menuScreen__left">{/* <MenuList /> */}</div>
+        <div className="menuScreen__left">
+          <MenuList />
+        </div>
         <div className="menuScreen__right">
           <h1>Menu</h1>
 
@@ -17,8 +20,8 @@ const MenuScreen = () => {
             <h2>Drinks</h2>
             <div className="menuScreen__items">
               {menuList.map((menuListCategory) =>
-                menuListCategory.drinks.map(({ type, path, image }) => (
-                  <MenuItem type={type} path={path} image={image} />
+                menuListCategory.drinks.map(({ type, path, image }, index) => (
+                  <MenuItem key={index} type={type} path={path} image={image} />
                 ))
               )}
             </div>
@@ -28,8 +31,8 @@ const MenuScreen = () => {
             <h2>Food</h2>
             <div className="menuScreen__items">
               {menuList.map((menuListCategory) =>
-                menuListCategory.food.map(({ type, path, image }) => (
-                  <MenuItem type={type} path={path} image={image} />
+                menuListCategory.food.map(({ type, path, image }, index) => (
+                  <MenuItem key={index} type={type} path={path} image={image} />
                 ))
               )}
             </div>
@@ -39,8 +42,8 @@ const MenuScreen = () => {
             <h2>At Home Coffee</h2>
             <div className="menuScreen__items">
               {menuList.map((menuListCategory) =>
-                menuListCategory.atHomeCoffee.map(({ type, path, image }) => (
-                  <MenuItem type={type} path={path} image={image} />
+                menuListCategory.food.map(({ type, path, image }, index) => (
+                  <MenuItem key={index} type={type} path={path} image={image} />
                 ))
               )}
             </div>
@@ -50,8 +53,8 @@ const MenuScreen = () => {
             <h2>Merchandise</h2>
             <div className="menuScreen__items">
               {menuList.map((menuListCategory) =>
-                menuListCategory.merchandise.map(({ type, path, image }) => (
-                  <MenuItem type={type} path={path} image={image} />
+                menuListCategory.food.map(({ type, path, image }, index) => (
+                  <MenuItem key={index} type={type} path={path} image={image} />
                 ))
               )}
             </div>
