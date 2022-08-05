@@ -12,6 +12,7 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 import firebaseApp from "./firebase";
 import SignupScreen from "./screens/SignupScreen";
 import MenuScreen from "./screens/MenuScreen";
+import FeaturedScreen from "./screens/FeaturedScreen";
 
 function App() {
   const user = useSelector(selectUser);
@@ -72,6 +73,18 @@ function App() {
                   <MenuScreen />
                 </>
               )
+            }
+          />
+          <Route
+            path="/menu/feature"
+            element={
+              <>
+                <Header />
+                <FeaturedScreen />
+                <Fade>
+                  <Footer />
+                </Fade>
+              </>
             }
           />
         </Routes>
