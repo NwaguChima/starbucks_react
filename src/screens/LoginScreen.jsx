@@ -19,11 +19,9 @@ const LoginScreen = () => {
   const dispatch = useDispatch();
 
   const onSubmit = ({ email, password }) => {
-    console.log(email, password);
     const auth = getAuth();
     signInWithEmailAndPassword(auth, email, password)
       .then((userAuth) => {
-        console.log("userAuth", userAuth);
         dispatch(
           login({
             email: userAuth.user.email,
@@ -41,26 +39,26 @@ const LoginScreen = () => {
         <Link to="/">
           <img
             src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/Starbucks_Corporation_Logo_2011.svg/1200px-Starbucks_Corporation_Logo_2011.svg.png"
-            alt="logo starbucks"
+            alt=""
           />
         </Link>
         <div className="loginScreen__info">
-          <h1>Sign in or create an account</h1>
+          <h1>Sign in or create an account 🌟</h1>
         </div>
       </div>
       <div className="loginScreen__right">
-        <form action="" onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <div className="loginScreen__inputContainer">
             <TextField
               name="email"
-              type="email"
               label="Email Address"
-              inputlabelprops={{ style: { color: "rgba(0, 0, 0, .56)" } }}
-              inputProps={{
-                style: { fontWeight: "800" },
+              type="email"
+              InputLabelProps={{
+                style: { color: "rgba(0,0,0,.56)" },
               }}
+              InputProps={{ style: { fontWeight: "800" } }}
               className="loginScreen__input"
-              inputRef={register("email", { required: true })}
+              inputRef={register({ required: true })}
             />
             {errors.email && (
               <div className="loginScreen__error">
@@ -76,14 +74,14 @@ const LoginScreen = () => {
           <div className="loginScreen__inputContainer">
             <TextField
               name="password"
-              type={passwordShown ? "text" : "password"}
               label="Password"
-              inputlabelprops={{ style: { color: "rgba(0, 0, 0, .56)" } }}
-              inputProps={{
-                style: { fontWeight: "800" },
+              type={passwordShown ? "text" : "password"}
+              InputLabelProps={{
+                style: { color: "rgba(0,0,0,.56)" },
               }}
+              InputProps={{ style: { fontWeight: "800" } }}
               className="loginScreen__input"
-              inputRef={register("password", { required: true })}
+              inputRef={register({ required: true })}
             />
             {passwordShown ? (
               <VisibilityOutlinedIcon
@@ -108,22 +106,21 @@ const LoginScreen = () => {
             )}
           </div>
           <div className="loginScreen__resetLinks">
-            <Link to="/">Forgot your username?</Link>
-            <Link to="/">Forgot your password?</Link>
+            <Link to="#">Forgot your username?</Link>
+            <Link to="#">Forgot your password?</Link>
           </div>
           <FormSubmit name="Sign in" type="submit" />
         </form>
-
         <div className="loginScreen__rewards">
-          <h4>JOIN STARBUCK@ REWARDS</h4>
+          <h4>JOIN STARBUCKS® REWARDS</h4>
         </div>
         <div className="loginScreen__joinNow">
           <div className="loginScreen__joinNowContainer">
-            <Link to="/account/create">Join Now</Link>
-            <h3>Create an account and bring on the Rewards!</h3>
+            <Link to="/account/create">Join now</Link>
+            <h4>Create an account and bring on the Rewards!</h4>
             <p>
-              Join Starbucks@ Rewards to earn free food and drinks, get free
-              refills, pay and order with your phoem, and more.
+              Join Starbucks® Rewards to earn free food and drinks, get free
+              refills, pay and order with your phone, and more.
             </p>
           </div>
         </div>

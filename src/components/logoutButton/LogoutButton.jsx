@@ -1,20 +1,22 @@
 import React from "react";
 import "./LogoutButton.css";
-import { logout } from "./features/userSlice";
-import { auth } from "./firebase";
+import { logout } from "../../features/userSlice";
 import { useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { getAuth, signOut } from "firebase/auth";
+import firebaseApp from "../../firebase";
 
 function LogoutButton() {
   const dispatch = useDispatch();
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const logoutOfApp = () => {
-    auth
-      .signOut()
+    const auth = getAuth(firebaseApp);
+
+    signOut(auth)
       .then(() => {
         dispatch(logout());
-        history.replace("/");
+        navigate("/");
       })
       .catch((error) => alert(error.message));
   };

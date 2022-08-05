@@ -23,24 +23,24 @@ const SignupForm = () => {
   let navigate = useNavigate();
 
   const onSubmit = ({ fName, lName, email, password }) => {
-    // const auth = getAuth();
-    // createUserWithEmailAndPassword(auth, email, password)
-    //   .then((userAuth) => {
-    //     updateProfile(auth.currentUser, {
-    //       displayName: fName,
-    //     }).then(() => {
-    //       dispatch(
-    //         login({
-    //           email: userAuth.user.email,
-    //           uid: userAuth.user.uid,
-    //           displayName: userAuth.user.displayName,
-    //         })
-    //       );
+    const auth = getAuth();
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userAuth) => {
+        updateProfile(auth.currentUser, {
+          displayName: fName,
+        }).then(() => {
+          dispatch(
+            login({
+              email: userAuth.user.email,
+              uid: userAuth.user.uid,
+              displayName: userAuth.user.displayName,
+            })
+          );
 
-    //       navigate("/menu", { replace: true });
-    //     });
-    //   })
-    //   .catch((error) => alert(error.message));
+          navigate("/menu", { replace: true });
+        });
+      })
+      .catch((error) => alert(error.message));
 
     navigate("/menu", { replace: true });
   };
