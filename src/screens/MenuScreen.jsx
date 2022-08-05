@@ -1,11 +1,13 @@
 import React from "react";
 import "./MenuScreen.css";
 import menuList from "../menuList.json";
+import MenuItem from "../components/menuItem/MenuItem";
+import MenuHeader from "../components/menuHeader/MenuHeader";
 
 const MenuScreen = () => {
   return (
     <div className="menuScreen">
-      {/* <MenuHeader /> */}
+      <MenuHeader />
       <div className="menuScreen__container">
         <div className="menuScreen__left">{/* <MenuList /> */}</div>
         <div className="menuScreen__right">
