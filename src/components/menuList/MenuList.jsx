@@ -18,6 +18,45 @@ const MenuList = () => {
           )}
         </div>
       </div>
+
+      <div className="menuList__container">
+        <h4>Foods</h4>
+        <div className="menuList__items">
+          {menuList.map((menuListCategory) =>
+            menuListCategory.food.map(({ type, path }) => (
+              <Link key={path} to={path}>
+                {type}
+              </Link>
+            ))
+          )}
+        </div>
+      </div>
+
+      <div className="menuList__container">
+        <h4>At Home Coffee</h4>
+        <div className="menuList__items">
+          {menuList.map((menuListCategory) =>
+            menuListCategory.atHomeCoffee.map(({ type, path }) => (
+              <Link key={path} to={path}>
+                {type}
+              </Link>
+            ))
+          )}
+        </div>
+      </div>
+
+      <div className="menuList__container">
+        <h4>Merchandise</h4>
+        <div className="menuList__items">
+          {menuList.map((menuListCategory) =>
+            menuListCategory.merchandise.map(({ type, path }) => (
+              <Link key={path} to={path}>
+                {type}
+              </Link>
+            ))
+          )}
+        </div>
+      </div>
     </div>
   );
 };
