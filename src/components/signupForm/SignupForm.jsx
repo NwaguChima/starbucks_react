@@ -17,7 +17,7 @@ import { login } from "../../features/userSlice";
 import { useNavigate } from "react-router-dom";
 
 const SignupForm = () => {
-  const { register, handleSubmit, watch, errors } = useForm();
+  const { register, handleSubmit, errors } = useForm();
   const [passwordShown, setPasswordShown] = useState(false);
   const dispatch = useDispatch();
   let navigate = useNavigate();

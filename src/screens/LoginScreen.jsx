@@ -14,7 +14,7 @@ import { useDispatch } from "react-redux";
 import { login } from "../features/userSlice";
 
 const LoginScreen = () => {
-  const { register, handleSubmit, watch, errors } = useForm();
+  const { register, handleSubmit, errors } = useForm();
   const [passwordShown, setPasswordShown] = useState(false);
   const dispatch = useDispatch();
 
