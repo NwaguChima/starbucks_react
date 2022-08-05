@@ -3,7 +3,7 @@ import { Fade } from "react-awesome-reveal";
 import Featured from "../components/featured/Featured";
 import Heading from "../components/heading/Heading";
 import Info from "../components/info/Info";
-import "./FeaturedScreen";
+import "./FeaturedScreen.css";
 
 const FeaturedScreen = () => {
   return (
